@@ -1,0 +1,5 @@
+{
+    "env": {
+        "Mongo-Atlas-PW" : "mongoDB9012?"
+    }
+}
