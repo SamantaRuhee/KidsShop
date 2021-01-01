@@ -113,7 +113,7 @@ const getLatestRatings = (req, res) => {
         }
       })
       axios
-        .post('https://product-service-sda.herokuapp.com/product/sync', result)
+        .post('https://walmart.com/product/sync', result)
         .then(res => {
           console.log(res)
         })
