@@ -29,11 +29,11 @@ exports.createNewProduct = (req, res) =>{
     console.log('ProductReqData', ProductReqData);
     // check null
     if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-        res.send(400).send({success: false, message: 'Please fill all fields'});
+        res.send(201).send({success: false, message: 'Please fill all fields'});
     }else{
         Product.createProduct(ProductReqData, (err, Product)=>{
             if(err)
-            res.send(err);
+            res.send(500).send(err);
             res.json({status: true, message: 'Product Created Successfully', data: Product.insertId})
         })
     }
