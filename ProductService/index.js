@@ -18,16 +18,15 @@ const productroutes = require('./src/routes/product.route')
 
 // Product routes
 app.use('/product/add', productroutes);
-//app.delete('/product/remove/:productId', deleteProduct)
-//app.get('/product/list', getAllProducts)
-//app.post('/product/updateCategory', updateCategory)
+app.use('/product/remove/:id', productroutes)
+app.use('/product/:id',productroutes)
+app.use('/product/list', productroutes)
+app.use('/product/updateCategory', productroutes)
 
 // Routes from rating service
-//app.post('/product/sync', syncProduct)
+app.use('/product/sync', syncProduct)
 
-app.get('/',(req,res)=>{
-    res.send('hello world');
-});
+
 
 // listen to the port
 app.listen(port, ()=>{
