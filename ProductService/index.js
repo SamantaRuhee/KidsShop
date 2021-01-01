@@ -13,8 +13,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 // parse request data content type application/json
 app.use(bodyParser.json());
 
+const productroutes = require('./src/routes/product.route')
+
+
 // Product routes
-//app.post('/product/add', addProduct)
+app.use('/product/add', productroutes);
 //app.delete('/product/remove/:productId', deleteProduct)
 //app.get('/product/list', getAllProducts)
 //app.post('/product/updateCategory', updateCategory)
